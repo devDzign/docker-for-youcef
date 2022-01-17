@@ -5,7 +5,7 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 RUN apt-get update \
     && apt-get install -y --no-install-recommends  \
     locales apt-utils git libicu-dev g++ libpng-dev libxml2-dev libzip-dev libonig-dev libxslt-dev unzip libpq-dev nodejs npm wget \
-    apt-transport-https lsb-release ca-certificates \ mysql rabbi
+    apt-transport-https lsb-release ca-certificates \
 
 RUN npm install --global yarn
 
@@ -37,5 +37,3 @@ EXPOSE 80
 
 
 CMD ["apache2-foreground"]
-
-FROM mysql
